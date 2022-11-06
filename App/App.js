@@ -3,14 +3,23 @@ import { Alert, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 const App = () => {
 
-  const doSomething = () => {
-    Alert.alert('WHAT!?','I TOLD YOU NOT TO');
+  const doSomething = async() => {
+    Alert.alert('Songs List','Ready');
+    const api = 'https://itunes.apple.com/search?term=metallica';
+    const response = await fetch(api, {
+      method: 'get'
+    });
+
+    const data = await response.json();
+
+    console.log(data);
+
   }
 
   return(
     <View style={myStyle.container}>
       <TouchableOpacity style={myStyle.btn} onPress={doSomething}>
-      <Text style={myStyle.btntext}>Don't Click Me</Text>
+      <Text style={myStyle.btntext}>Get Music</Text>
       </TouchableOpacity>
     </View>
   )
