@@ -5,7 +5,7 @@ const App = () => {
 
   const doSomething = async() => {
     Alert.alert('Songs List','Ready');
-    const api = 'https://itunes.apple.com/search?term=metallica';
+    const api = 'https://itunes.apple.com/search?term=noa+kirel';
     const response = await fetch(api, {
       method: 'get'
     });
